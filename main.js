@@ -37,10 +37,17 @@
 
     function calculate (event) {
         alert(event.target.value);
+        calculation.push(event.target.value);
+        console.log(calculation);
     }
 
     $equalButton.addEventListener('click', calculate);
+    for (i = 0; i <calculation.length; i++) {  //Using a `for` loop, `alert()` the calculation when `=` is pressed
+        console.log(calculation[i]); 
+    }
     //calculate (event)
+    
+
    
 
    

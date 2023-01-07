@@ -8,8 +8,13 @@
     const $equalButton = document.querySelector('.equal-sign');
     let calculation = [];//Define a variable `calculation` pointing to an empty array
 
+    
+
     function pushNumber (event) { //Define a function named `pushNumber` that `alert()`s the number associated with its event argument when called
         alert(event.target.value);//HTML events ex:click,targets HTML event element that event occuring on,finds number in HTML which is value
+        calculation.push(event.target.value);//pushing to calulation array the numbers
+        console.log(calculation);
+    
     }
 
 
@@ -21,6 +26,8 @@
 
     function pushOperator (event) {
         alert(event.target.value);
+        calculation.push(event.target.value);
+        console.log(calculation);
     }
 
         $operationButtons.forEach(function(button) {
@@ -33,7 +40,7 @@
     }
 
     $equalButton.addEventListener('click', calculate);
-    //calculate event
+    //calculate (event)
    
 
    

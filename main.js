@@ -6,7 +6,9 @@
     const $numberButtons = document.querySelectorAll('.number');
     const $operationButtons = document.querySelectorAll('.operator');
     const $equalButton = document.querySelector('.equal-sign');
-    let calculation = [];//Define a variable `calculation` pointing to an empty array
+    let calculation = [];//Define/initialize a variable `calculation` pointing to an empty array
+
+
 
     
 
@@ -26,7 +28,7 @@
 
     function pushOperator (event) {
         alert(event.target.value);
-        calculation.push(event.target.value);
+        calculation.push(event.target.value);//pushing to calculation array the operators
         console.log(calculation);
     }
 
@@ -37,14 +39,15 @@
 
     function calculate (event) {
         alert(event.target.value);
-        calculation.push(event.target.value);
+        calculation.push(event.target.value);//pushing to calculation array the equal sign
         console.log(calculation);
+        for (let i = 0; i < calculation.length; i++) {  //Using a `for` loop, `alert()` the calculation when `=` is pressed
+            console.log(calculation[i]); 
+        }
     }
 
     $equalButton.addEventListener('click', calculate);
-    for (i = 0; i <calculation.length; i++) {  //Using a `for` loop, `alert()` the calculation when `=` is pressed
-        console.log(calculation[i]); 
-    }
+    
     //calculate (event)
     
 

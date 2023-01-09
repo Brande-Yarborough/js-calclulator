@@ -4,7 +4,7 @@
     'use strict'
     
     const $numberButtons = document.querySelectorAll('.number');
-    const $operationButtons = document.querySelectorAll('.operator');
+    const $operationButtons = document.querySelectorAll('.operator, .clear');
     const $equalButton = document.querySelector('.equal-sign');
     let calculation = [];//Define/initialize a variable `calculation` pointing to an empty array
 

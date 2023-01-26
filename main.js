@@ -10,26 +10,27 @@
   const $calculatorScreen = document.querySelector(".calculator-screen");
 
   let calculation = []; //Define/initialize a variable `calculation` pointing to an empty array
+  let display = ""; //sets display to empty string
 
   function pushNumber(event) {
     //Define a function named `pushNumber` that `alert()`s the number associated with its event argument when called
     //alert(event.target.value);//HTML events ex:click,targets HTML event element that event occuring on,finds number in HTML which is value
     calculation.push(event.target.value); //pushing to calulation array the numbers
-    $calculatorScreen.value = event.target.value; //get numbers to display on calculator screen
-    console.log(calculation);
+    display = display + event.target.value;
+    $calculatorScreen.value = display; //get numbers to display on calculator screen
   }
 
   $numberButtons.forEach(function (button) {
     //add this function pushNumber as an event listener for the number buttons
     button.addEventListener("click", pushNumber); //addEventLIstener(type of event, event listener)-telling JS to listen for event 'click' and call this function-pushNumber
   });
+
   // pushNumber (event)
 
   function pushOperator(event) {
     //alert(event.target.value);
     calculation.push(event.target.value); //pushing to calculation array the operators
-    $calculatorScreen.value = event.target.value; //get operators to display on calculator screen
-    console.log(calculation);
+    display = "";
   }
 
   $operationButtons.forEach(function (button) {
@@ -40,6 +41,7 @@
   function clear(event) {
     $calculatorScreen.value = 0;
     calculation = []; //set calculation back to empty array for clear
+    display = "";
   }
 
   $clearButton.addEventListener("click", clear);
@@ -48,7 +50,6 @@
     // alert(event.target.value);
     // calculation.push(event.target.value);//pushing to calculation array the equal sign
     // console.log(calculation);
-    console.log("=");
 
     //coerces loop as undefined string to be concatenated
     let num1 = "",
@@ -95,6 +96,5 @@
     // alert(result); //shows calculation and result in console
     $calculatorScreen.value = result; //shows result on display of calculator screen
   }
-
   $equalButton.addEventListener("click", calculate);
 })();

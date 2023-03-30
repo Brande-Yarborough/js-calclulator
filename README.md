@@ -1,3 +1,6 @@
+Calculator that performs basic functions using Javascript. Based on the ios calculator. 
+
+
 # Description
 
 The goal is to create a working calculator, identical in functionality to Calculator.app on your Mac.
